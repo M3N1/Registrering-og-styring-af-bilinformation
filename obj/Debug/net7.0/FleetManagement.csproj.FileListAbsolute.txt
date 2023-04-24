@@ -31,3 +31,37 @@
 /Users/nicklasfrolundabrahamsen/Desktop/Fleet Management-projekt/FleetManagement/obj/Debug/net7.0/FleetManagement.pdb
 /Users/nicklasfrolundabrahamsen/Desktop/Fleet Management-projekt/FleetManagement/obj/Debug/net7.0/FleetManagement.genruntimeconfig.cache
 /Users/nicklasfrolundabrahamsen/Desktop/Fleet Management-projekt/FleetManagement/obj/Debug/net7.0/ref/FleetManagement.dll
+/Users/nicklasfrolundabrahamsen/Desktop/FleetManagement/FleetManagement/obj/Debug/net7.0/FleetManagement.csproj.AssemblyReference.cache
+/Users/nicklasfrolundabrahamsen/Desktop/FleetManagement/FleetManagement/obj/Debug/net7.0/FleetManagement.GeneratedMSBuildEditorConfig.editorconfig
+/Users/nicklasfrolundabrahamsen/Desktop/FleetManagement/FleetManagement/obj/Debug/net7.0/FleetManagement.AssemblyInfoInputs.cache
+/Users/nicklasfrolundabrahamsen/Desktop/FleetManagement/FleetManagement/obj/Debug/net7.0/FleetManagement.AssemblyInfo.cs
+/Users/nicklasfrolundabrahamsen/Desktop/FleetManagement/FleetManagement/obj/Debug/net7.0/FleetManagement.csproj.CoreCompileInputs.cache
+/Users/nicklasfrolundabrahamsen/Desktop/FleetManagement/FleetManagement/obj/Debug/net7.0/FleetManagement.MvcApplicationPartsAssemblyInfo.cs
+/Users/nicklasfrolundabrahamsen/Desktop/FleetManagement/FleetManagement/obj/Debug/net7.0/FleetManagement.MvcApplicationPartsAssemblyInfo.cache
+/Users/nicklasfrolundabrahamsen/Desktop/FleetManagement/FleetManagement/obj/Debug/net7.0/FleetManagement.dll
+/Users/nicklasfrolundabrahamsen/Desktop/FleetManagement/FleetManagement/obj/Debug/net7.0/refint/FleetManagement.dll
+/Users/nicklasfrolundabrahamsen/Desktop/FleetManagement/FleetManagement/obj/Debug/net7.0/FleetManagement.pdb
+/Users/nicklasfrolundabrahamsen/Desktop/FleetManagement/FleetManagement/bin/Debug/net7.0/appsettings.Development.json
+/Users/nicklasfrolundabrahamsen/Desktop/FleetManagement/FleetManagement/bin/Debug/net7.0/appsettings.json
+/Users/nicklasfrolundabrahamsen/Desktop/FleetManagement/FleetManagement/bin/Debug/net7.0/FleetManagement
+/Users/nicklasfrolundabrahamsen/Desktop/FleetManagement/FleetManagement/bin/Debug/net7.0/FleetManagement.deps.json
+/Users/nicklasfrolundabrahamsen/Desktop/FleetManagement/FleetManagement/bin/Debug/net7.0/FleetManagement.runtimeconfig.json
+/Users/nicklasfrolundabrahamsen/Desktop/FleetManagement/FleetManagement/bin/Debug/net7.0/FleetManagement.dll
+/Users/nicklasfrolundabrahamsen/Desktop/FleetManagement/FleetManagement/bin/Debug/net7.0/FleetManagement.pdb
+/Users/nicklasfrolundabrahamsen/Desktop/FleetManagement/FleetManagement/bin/Debug/net7.0/Microsoft.AspNetCore.OpenApi.dll
+/Users/nicklasfrolundabrahamsen/Desktop/FleetManagement/FleetManagement/bin/Debug/net7.0/Microsoft.OpenApi.dll
+/Users/nicklasfrolundabrahamsen/Desktop/FleetManagement/FleetManagement/bin/Debug/net7.0/RabbitMQ.Client.dll
+/Users/nicklasfrolundabrahamsen/Desktop/FleetManagement/FleetManagement/bin/Debug/net7.0/Swashbuckle.AspNetCore.Swagger.dll
+/Users/nicklasfrolundabrahamsen/Desktop/FleetManagement/FleetManagement/bin/Debug/net7.0/Swashbuckle.AspNetCore.SwaggerGen.dll
+/Users/nicklasfrolundabrahamsen/Desktop/FleetManagement/FleetManagement/bin/Debug/net7.0/Swashbuckle.AspNetCore.SwaggerUI.dll
+/Users/nicklasfrolundabrahamsen/Desktop/FleetManagement/FleetManagement/obj/Debug/net7.0/staticwebassets/msbuild.FleetManagement.Microsoft.AspNetCore.StaticWebAssets.props
+/Users/nicklasfrolundabrahamsen/Desktop/FleetManagement/FleetManagement/obj/Debug/net7.0/staticwebassets/msbuild.build.FleetManagement.props
+/Users/nicklasfrolundabrahamsen/Desktop/FleetManagement/FleetManagement/obj/Debug/net7.0/staticwebassets/msbuild.buildMultiTargeting.FleetManagement.props
+/Users/nicklasfrolundabrahamsen/Desktop/FleetManagement/FleetManagement/obj/Debug/net7.0/staticwebassets/msbuild.buildTransitive.FleetManagement.props
+/Users/nicklasfrolundabrahamsen/Desktop/FleetManagement/FleetManagement/obj/Debug/net7.0/staticwebassets.pack.json
+/Users/nicklasfrolundabrahamsen/Desktop/FleetManagement/FleetManagement/obj/Debug/net7.0/staticwebassets.build.json
+/Users/nicklasfrolundabrahamsen/Desktop/FleetManagement/FleetManagement/obj/Debug/net7.0/staticwebassets.development.json
+/Users/nicklasfrolundabrahamsen/Desktop/FleetManagement/FleetManagement/obj/Debug/net7.0/scopedcss/bundle/FleetManagement.styles.css
+/Users/nicklasfrolundabrahamsen/Desktop/FleetManagement/FleetManagement/obj/Debug/net7.0/FleetManagement.csproj.CopyComplete
+/Users/nicklasfrolundabrahamsen/Desktop/FleetManagement/FleetManagement/obj/Debug/net7.0/FleetManagement.genruntimeconfig.cache
+/Users/nicklasfrolundabrahamsen/Desktop/FleetManagement/FleetManagement/obj/Debug/net7.0/ref/FleetManagement.dll

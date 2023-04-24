@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/nicklasfrolundabrahamsen/Desktop/Fleet Management-projekt/FleetManagement/FleetManagement.csproj": {}
+    "/Users/nicklasfrolundabrahamsen/Desktop/FleetManagement/FleetManagement/FleetManagement.csproj": {}
   },
   "projects": {
-    "/Users/nicklasfrolundabrahamsen/Desktop/Fleet Management-projekt/FleetManagement/FleetManagement.csproj": {
+    "/Users/nicklasfrolundabrahamsen/Desktop/FleetManagement/FleetManagement/FleetManagement.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/nicklasfrolundabrahamsen/Desktop/Fleet Management-projekt/FleetManagement/FleetManagement.csproj",
+        "projectUniqueName": "/Users/nicklasfrolundabrahamsen/Desktop/FleetManagement/FleetManagement/FleetManagement.csproj",
         "projectName": "FleetManagement",
-        "projectPath": "/Users/nicklasfrolundabrahamsen/Desktop/Fleet Management-projekt/FleetManagement/FleetManagement.csproj",
+        "projectPath": "/Users/nicklasfrolundabrahamsen/Desktop/FleetManagement/FleetManagement/FleetManagement.csproj",
         "packagesPath": "/Users/nicklasfrolundabrahamsen/.nuget/packages/",
-        "outputPath": "/Users/nicklasfrolundabrahamsen/Desktop/Fleet Management-projekt/FleetManagement/obj/",
+        "outputPath": "/Users/nicklasfrolundabrahamsen/Desktop/FleetManagement/FleetManagement/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/nicklasfrolundabrahamsen/.nuget/NuGet/NuGet.Config"
@@ -42,6 +42,10 @@
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[7.0.3, )"
+            },
+            "RabbitMQ.Client": {
+              "target": "Package",
+              "version": "[6.5.0, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",

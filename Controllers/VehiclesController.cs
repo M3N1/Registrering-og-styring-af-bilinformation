@@ -5,7 +5,7 @@ using System.Linq;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace FleetManagement.API.Controllers
+namespace FleetManagement.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
