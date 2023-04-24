@@ -1,0 +1,17 @@
+Post
+http://localhost:5100/api/vehicles/create
+
+{
+  "model": "Tesla Model 3",
+  "brand": "Tesla",
+  "year": 2021,
+  "vin": "1HGCM82633A004352",
+  "registrationNumber": "ABC123",
+  "imageHistory": [],
+  "serviceHistory": []
+}
+
+Get 
+
+http://localhost:5100/api/vehicles/list
+
