@@ -15,3 +15,49 @@ Get
 
 http://localhost:5100/api/vehicles/list
 
+Post
+http://localhost:5100/api/vehicles/create
+
+{
+  "model": "Tesla Model 3",
+  "brand": "Tesla",
+  "year": 2021,
+  "vin": "1HGCM82633A004352",
+  "registrationNumber": "ABC123",
+  "imageHistory": [],
+  "serviceHistory": []
+}
+
+Get 
+
+http://localhost:5100/api/vehicles/list
+
+
+
+Service historik
+
+Post
+http://localhost:5100/api/vehicles/2/servicerecords
+
+{
+    "id": 1,
+    "vehicleId": 1,
+    "referenceId": "44d3fe17-9d3a-4fc5-8722-90f38bfe7fc5",
+    "date": "2023-04-26T08:00:00Z",
+    "description": "Service for car",
+    "workshopResponsible": "John Doe"
+}
+
+
+Get from id 
+
+http://localhost:5100/api/vehicles/4/servicerecords
+Nicklas
+post image 
+
+http://localhost:5100/api/vehicles/4d74cd59-c822-49ec-80e5-bc1077a21265/uploadImage
+Nicklas
+Nicklas Frølund Abrahamsen
+Get image 
+
+http://localhost:5100/api/vehicles/12742679-973f-42de-bbff-682d1795441c/listImages
