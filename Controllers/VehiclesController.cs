@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using MongoDB.Driver;
 
 namespace FleetManagement.Controllers
 {
@@ -18,7 +19,7 @@ namespace FleetManagement.Controllers
         private readonly string _imagePath = "Images";
 
         [HttpPost("create")]
-        public IActionResult CreateVehicle(Vehicle vehicle)
+        public async Task<IActionResult> CreateVehicle(Vehicle vehicle)
         {
             if (vehicle == null)
             {
@@ -27,14 +28,20 @@ namespace FleetManagement.Controllers
 
             vehicle.Id = Guid.NewGuid();
             vehicle.ImageHistory = new List<ImageRecord>();
-            Vehicles.Add(vehicle);
+
+            MongoClient dbClient = new MongoClient("mongodb://admin:1234@localhost:27018/?authSource=admin");
+            var collection = dbClient.GetDatabase("vehicle").GetCollection<Vehicle>("vehicles");
+            await collection.InsertOneAsync(vehicle);
             return Ok(vehicle);
         }
 
         [HttpGet("list")]
-        public IActionResult ListVehicles()
+        public async Task<IActionResult> ListVehicles()
         {
-            return Ok(Vehicles);
+            MongoClient dbClient = new MongoClient("mongodb://admin:1234@localhost:27018/?authSource=admin");
+            var collection = dbClient.GetDatabase("vehicle").GetCollection<Vehicle>("vehicles");
+            var vehicles = await collection.Find(_ => true).ToListAsync();
+            return Ok(vehicles);
         }
 
         [HttpGet("{vehicleId}")]
