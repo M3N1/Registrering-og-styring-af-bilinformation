@@ -44,35 +44,53 @@ namespace FleetManagement.Controllers
             return Ok(vehicles);
         }
 
-        [HttpGet("{vehicleId}")]
-        public IActionResult GetVehicle(Guid vehicleId)
+        [HttpGet("{reg}")]
+        public async Task<IActionResult> GetVehicle(string reg)
         {
-            Vehicle vehicle = Vehicles.FirstOrDefault(v => v.Id == vehicleId);
+            MongoClient dbClient = new MongoClient("mongodb://admin:1234@localhost:27018/?authSource=admin");
+            var collection = dbClient.GetDatabase("vehicle").GetCollection<Vehicle>("vehicles");
+            Vehicle vehicle = await collection.Find(v => v.RegistrationNumber == reg).FirstOrDefaultAsync();
+
             if (vehicle == null)
             {
-                return NotFound($"Vehicle with ID {vehicleId} not found.");
+                return NotFound($"Vehicle with RegistrationNumber {reg} not found.");
             }
             return Ok(vehicle);
         }
 
-        [HttpGet("{vehicleId}/listImages")]
-        public IActionResult ListImages(Guid vehicleId)
+
+        [HttpGet("{reg}/listImages")]
+        public IActionResult ListImages(string reg)
         {
-            Vehicle vehicle = Vehicles.FirstOrDefault(v => v.Id == vehicleId);
+            Vehicle vehicle = Vehicles.FirstOrDefault(v => v.RegistrationNumber == reg);
             if (vehicle == null)
             {
-                return NotFound($"Vehicle with ID {vehicleId} not found.");
+                return NotFound($"Vehicle with RegistrationNumber {reg} not found.");
             }
             return Ok(vehicle.ImageHistory);
         }
 
-        [HttpPost("{vehicleId}/uploadImage"), DisableRequestSizeLimit]
-        public IActionResult UploadImage(Guid vehicleId)
+        [HttpPost("uploadImage/{reg}"), DisableRequestSizeLimit]
+        public async Task<IActionResult> UploadImage(string reg)
         {
-            Vehicle vehicle = Vehicles.FirstOrDefault(v => v.Id == vehicleId);
+            if (!Directory.Exists(_imagePath))
+            {
+                Directory.CreateDirectory(_imagePath);
+            }
+
+            MongoClient dbClient = new MongoClient("mongodb://admin:1234@localhost:27018/?authSource=admin");
+            var collection = dbClient.GetDatabase("vehicle").GetCollection<Vehicle>("vehicles");
+            var filter = Builders<Vehicle>.Filter.Eq(v => v.RegistrationNumber, reg);
+            Vehicle vehicle = await collection.Find(filter).FirstOrDefaultAsync();
+
             if (vehicle == null)
             {
-                return NotFound($"Vehicle with ID {vehicleId} not found.");
+                return NotFound($"Vehicle with RegistrationNumber {reg} not found.");
+            }
+
+            if (vehicle.ImageHistory == null)
+            {
+                vehicle.ImageHistory = new List<ImageRecord>();
             }
 
             try
@@ -108,6 +126,8 @@ namespace FleetManagement.Controllers
                         };
 
                         vehicle.ImageHistory.Add(imageRecord);
+                        var update = Builders<Vehicle>.Update.Push(v => v.ImageHistory, imageRecord);
+                        await collection.UpdateOneAsync(filter, update);
                     }
                     else
                     {
@@ -117,10 +137,39 @@ namespace FleetManagement.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Internal server error.");
+                return StatusCode(500, $"Internal server error: {ex}");
             }
 
-            return Ok(vehicle.ImageHistory);
+            return Ok("Image(s) uploaded successfully.");
         }
+
+
+        [HttpPost("{reg}/servicerecords")]
+        public async Task<IActionResult> AddServiceRecord(string reg, [FromBody] ServiceRecord serviceRecord)
+        {
+            MongoClient dbClient = new MongoClient("mongodb://admin:1234@localhost:27018/?authSource=admin");
+            var collection = dbClient.GetDatabase("vehicle").GetCollection<Vehicle>("vehicles");
+            Vehicle vehicle = await collection.Find(v => v.RegistrationNumber == reg).FirstOrDefaultAsync();
+
+            if (vehicle == null)
+            {
+                return NotFound($"Vehicle with RegistrationNumber {reg} not found.");
+            }
+
+            if (vehicle.ServiceHistory == null)
+            {
+                vehicle.ServiceHistory = new List<ServiceRecord>();
+            }
+
+            serviceRecord.Id = vehicle.ServiceHistory.Count + 1;
+            vehicle.ServiceHistory.Add(serviceRecord);
+
+            var update = Builders<Vehicle>.Update.Push(v => v.ServiceHistory, serviceRecord);
+            await collection.UpdateOneAsync(v => v.RegistrationNumber == reg, update);
+
+            return CreatedAtAction(nameof(GetVehicle), new { reg = reg }, vehicle);
+        }
+
     }
 }
+

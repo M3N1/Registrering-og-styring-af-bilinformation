@@ -1,7 +1,10 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using MongoDB.Driver;
 
 namespace FleetManagement.Controllers
 {
@@ -34,14 +37,24 @@ namespace FleetManagement.Controllers
         }
 
         // Create a new service record for a specific vehicle
+        // Create a new service record for a specific vehicle
+
+        /*/
         [HttpPost]
-        public IActionResult Create(int vehicleId, [FromBody] ServiceRecord serviceRecord)
+        public async Task<IActionResult> Create(int vehicleId, [FromBody] ServiceRecord serviceRecord)
         {
             serviceRecord.VehicleId = vehicleId;
             serviceRecord.Id = ServiceRecords.Count + 1;
             ServiceRecords.Add(serviceRecord);
 
+            MongoClient dbClient = new MongoClient("mongodb://admin:1234@localhost:27018/?authSource=admin");
+            var collection = dbClient.GetDatabase("vehicle").GetCollection<ServiceRecord>("servicerecords");
+            await collection.InsertOneAsync(serviceRecord);
+
             return CreatedAtAction(nameof(Get), new { vehicleId = serviceRecord.VehicleId, id = serviceRecord.Id }, serviceRecord);
         }
+        /*/
+
+
     }
 }
